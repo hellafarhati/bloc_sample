@@ -53,6 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
                CircularProgressIndicator(),
              );
            }
+           else if(state is UserLoadedState){
+             return const Center(
+               child:
+               Text("loaded"),
+             );
+           }
+           else if(state is UserErrorLoadingState){
+             return const Center(
+               child:
+               Text("error occured"),
+             );
+           }
            return Container();
          },
        ),

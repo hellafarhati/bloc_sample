@@ -9,7 +9,7 @@ abstract class UserState extends Equatable{}
   class UserLoadingState extends UserState {
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
   }
 
 
@@ -24,8 +24,14 @@ abstract class UserState extends Equatable{}
 
 
 class UserErrorLoadingState extends UserState{
+
+  final String errorMessage;
+
+
+  UserErrorLoadingState({required this.errorMessage});
+
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [errorMessage];
 
 }

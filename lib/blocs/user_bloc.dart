@@ -20,7 +20,7 @@ class UserBloc extends Bloc<UserEvent , UserState>{
 
 
       }catch(e){
-        emit(UserErrorLoadingState(e.toString()));
+        emit(UserErrorLoadingState(  errorMessage: e.toString()));
       }
 
 
