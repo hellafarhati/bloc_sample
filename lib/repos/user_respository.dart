@@ -5,7 +5,9 @@ import 'package:http/http.dart';
 
 class UserRepository{
 
-  final endPoint = "https://reqres.in/api111/users0?page=2";
+
+  final endPoint = "https://reqres.in/api/users?page=2";
+
 
   Future <List<UserModel>> getAllUsers() async {
 
@@ -13,15 +15,12 @@ class UserRepository{
      if(response.statusCode == 200){
 
        final List  result = jsonDecode(response.body)['data'] ;
+
        return   result.map((e) => UserModel.fromJson(e)).toList();
 
      } else {
        throw Exception(response.reasonPhrase);
      }
-
-
-
-
 
 
   }
